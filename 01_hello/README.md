@@ -1,4 +1,4 @@
-  * `hello_world.rs`
+# `hello_world.rs`
 
 Compile with:
 
@@ -9,13 +9,13 @@ Run with:
     ./hello_world
 
 
-*  `hello_cargo`
+# `hello_cargo`
 
-This project was create using `cargo`:
+This project was created using `cargo`:
 
     cargo new hello_cargo --bin
 
-`--bin` makes the project to product executable as opposed to a library
+`--bin` makes the project produce executable as opposed to a library
 (`--lib`).
 
 Run with (inside the project):
