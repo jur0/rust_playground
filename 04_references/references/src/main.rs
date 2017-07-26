@@ -171,5 +171,54 @@ fn main() {
             }
         }
         println!("rx = {}", rx);
+
+        // Rust by default assigns distinct lifetimes.
+        // The following function is the equivalent to:
+        // fn sum_r_s<'a, 'b, 'c>(r: &'a i32, s: S<'b, 'c>) -> i32
+        fn sum_r_s(r: &i32, s: S) -> i32 {
+            r + s.x + s.y
+        }
+
+        println!("sum_r_s = {}", sum_r_s(&100, S { x: &10, y: &20 }));
+    }
+
+    #[allow(unused_mut)]
+    {
+        let mut a = 1;
+        let ra1 = &a;
+        let ra2 = &a;
+        // Error: cannot assign to x as it's borrowed
+        //a += 10;
+        // Error: cannot borrow mutable when it's borrow immutable
+        //let ra3 = &mut a;
+        assert_eq!(*ra1, *ra2);
+
+        let mut b = 2;
+        let rb1 = &mut b;
+        // Error: cannot borrow more than 1 mutable reference.
+        //let rb2 = &mut b;
+        // Error: cannot use b, it was mutably borrowed.
+        //let bb = b;
+        assert_eq!(*rb1, 2);
+
+        let mut c = (1, 2);
+        let rc = &c;
+        // Reborrowing shared as shared.
+        let rc0 = &rc.0;
+        // Error: cannot reborrow shared as mutable.
+        //let rc1 = &mut rc.1;
+        assert_eq!(*rc, c);
+        assert_eq!(*rc0, c.0);
+
+        let mut d = (3, 4);
+        let rd = &mut d;
+        // Reborrowing.
+        let rd0 = &mut rd.0;
+        *rd0 = 10;
+        // Reborrowing shared from mutable. Also, doesn't overlap with rd0.
+        let rd1 = &rd.1;
+        // Error: accress through other paths is forbidden.
+        //d.1
+        assert_eq!(*rd1, 4);
     }
 }
