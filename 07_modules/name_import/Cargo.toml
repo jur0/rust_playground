@@ -1,0 +1,6 @@
+[package]
+name = "name_import"
+version = "0.1.0"
+authors = ["Juraj Hlista <jurajhlista@gmail.com>"]
+
+[dependencies]

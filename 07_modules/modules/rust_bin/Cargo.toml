@@ -1,0 +1,9 @@
+[package]
+
+name = "rust_bin"
+version = "0.0.1"
+authors = ["Juraj Hlista <jurajhlista@gmail.com>"]
+
+[dependencies]
+
+rust_lib = { path = "../rust_lib" }
