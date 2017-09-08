@@ -18,12 +18,13 @@ impl Iterator for I32Range {
 }
 
 // The standard library provides a blanket implementation of IntoIterator for
-// every type that implements Iterator
+// every type that implements Iterator.
 
 fn main() {
     let mut pi = 0.0;
     let mut numerator = 1.0;
 
+    // for loop uses .into_iter()
     for k in (I32Range { start: 0, end: 14 }) {
         pi += numerator / (2 * k + 1) as f64;
         numerator /= -3.0;
