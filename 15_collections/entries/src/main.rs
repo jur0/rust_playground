@@ -16,7 +16,7 @@ fn main() {
     assert_eq!(get_or_insert_entry1(&mut hmap, 7, 'g'), Some(&'g'));
 }
 
-// Without entries, hashmap is accessed 3 times (in the worst case).
+// Without entries, hashmap is accessed 2/3 times (in the worst case).
 fn get_or_insert_entry1(hmap: &mut HashMap<i32, char>, k: i32, v: char) ->
     Option<&char>
 {
@@ -25,12 +25,13 @@ fn get_or_insert_entry1(hmap: &mut HashMap<i32, char>, k: i32, v: char) ->
         // 2nd access.
         hmap.insert(k, v);
     }
-    // 3rd access.
+    // 2/3rd access.
     hmap.get(&k)
 }
 
 fn get_or_insert_entry2(hmap: &mut HashMap<i32, char>, k: i32, v: char) ->
     Option<&char>
 {
+    // Just one access using entry.
     Some(hmap.entry(k).or_insert(v))
 }
