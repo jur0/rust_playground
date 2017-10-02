@@ -1,0 +1,4 @@
+[root]
+name = "share_immutable_one_thread"
+version = "0.1.0"
+
