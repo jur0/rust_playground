@@ -5,7 +5,7 @@ fn main() {
         // have to initialise the variable. The variable must be initialised
         // later.
         let var;
-        // This is considered initialisation. Note that var is im mutable.
+        // This is considered initialisation. Note that var is immutable.
         var = 10;
         // Error: assignement to immutable variable.
         //var = 20;

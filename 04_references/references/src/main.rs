@@ -75,7 +75,7 @@ fn main() {
 
         // 1009 lasts only to the end of assert_eq! statement.
         assert_eq!(r_fact + &1000, 1720);
-        assert_eq!(r_fact+ 1000, 1720);
+        assert_eq!(r_fact + 1000, 1720);
         assert_eq!(*r_fact + 1000, 1720);
     }
 
