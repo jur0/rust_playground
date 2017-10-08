@@ -6,6 +6,8 @@ static NTHREADS: i32 = 10;
 fn main() {
     // Make a vector to hold the children which are spawned.
     let mut children = vec![];
+    // Arc is thread-safe reference counting pointer. It holds immutable data
+    // and thread-safe reference counter of the immutable data.
     let shared_data: Arc<Vec<i32>> = Arc::new(vec![1, 2, 3]);
 
     for i in 0..NTHREADS {
