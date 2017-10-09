@@ -1,0 +1,14 @@
+[root]
+name = "example1"
+version = "0.1.0"
+dependencies = [
+ "slog 2.0.12 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "slog"
+version = "2.0.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[metadata]
+"checksum slog 2.0.12 (registry+https://github.com/rust-lang/crates.io-index)" = "717c886b5e7855cf2e434a2d73ff494d33aaa584fb48e3074affc7b66dcd290d"

@@ -1,0 +1,8 @@
+[package]
+name = "example1"
+version = "0.1.0"
+authors = ["Juraj Hlista <jurajhlista@gmail.com>"]
+
+[dependencies]
+slog = "2.0"
+
