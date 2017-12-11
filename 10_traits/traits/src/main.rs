@@ -1,9 +1,8 @@
-
 fn main() {
     {
         // collect is a generic method. In this case we need to specify
         // the type parameter.
-        let v = (0 .. 10).collect::<Vec<i32>>();
+        let v = (0..10).collect::<Vec<i32>>();
         println!("v = {:?}", v);
     }
 
@@ -18,7 +17,8 @@ fn main() {
         // This is the same as the previous function. It just shows the use
         // of where keyword.
         fn compare_prints2<T>(t: &T)
-            where T: Debug + Display
+        where
+            T: Debug + Display,
         {
             println!("Debug: `{:?}`", t);
             println!("Display: `{}`", t);
@@ -75,8 +75,8 @@ fn main() {
             }
         }
 
-        impl A for bool { }
-        impl B for bool { }
+        impl A for bool {}
+        impl B for bool {}
 
         true.a_function();
         false.b_function();
@@ -88,10 +88,12 @@ fn main() {
             // Using the Sized bound the trait objects are excused for supporting
             // those methods.
             fn new() -> Self
-                where Self: Sized;
+            where
+                Self: Sized;
 
             fn from_slice(strings: &[&str]) -> Self
-                where Self: Sized;
+            where
+                Self: Sized;
 
             fn contains(&self, string: &str) -> bool;
 

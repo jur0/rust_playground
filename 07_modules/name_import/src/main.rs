@@ -1,4 +1,3 @@
-
 pub mod a {
     pub mod series {
         pub mod of {
@@ -33,6 +32,9 @@ fn main() {
     let green = TrafficLights::Green;
 
     nested_modules();
-    println!("red = {:?}, yellow = {:?}, green = {:?}", red, yellow, green);
+    println!(
+        "red = {:?}, yellow = {:?}, green = {:?}",
+        red, yellow, green
+    );
     println!("one = {:?}, two = {:?}, three = {:?}", One, Two, Three);
 }

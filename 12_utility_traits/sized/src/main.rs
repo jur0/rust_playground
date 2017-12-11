@@ -14,8 +14,7 @@ struct A<T> {
 
 // ?Sized means "not necessarily Sized".
 struct B<T: ?Sized> {
-    #[allow(dead_code)]
-    x: i32,
+    #[allow(dead_code)] x: i32,
     y: T,
 }
 
@@ -28,7 +27,10 @@ fn main() {
     // B struct must be created at first. Then a reference to the created
     // sized value can be converted to a fat reference.
     // String is sized.
-    let b: B<String> = B { x: 100, y: "hello".to_string() };
+    let b: B<String> = B {
+        x: 100,
+        y: "hello".to_string(),
+    };
     let bb: &B<Display> = &b;
 
     // TODO: this doesn't work

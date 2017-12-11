@@ -1,4 +1,3 @@
-
 struct TestError {
     code: i32,
 }
@@ -15,11 +14,9 @@ fn get_result_ok() -> Result<String> {
 }
 
 fn main() {
-    let x = get_result_err()
-        .unwrap_or_else(|e| format!("error in x occured: {}", e.code));
+    let x = get_result_err().unwrap_or_else(|e| format!("error in x occured: {}", e.code));
 
-    let y = get_result_ok()
-        .unwrap_or_else(|e| format!("error in y occured: {}", e.code));
+    let y = get_result_ok().unwrap_or_else(|e| format!("error in y occured: {}", e.code));
 
     println!("x = {}", x);
     println!("y = {}", y);

@@ -19,7 +19,7 @@ struct Selector<T> {
 }
 
 impl<T> Deref for Selector<T> {
-    type Target=T;
+    type Target = T;
 
     fn deref(&self) -> &T {
         println!("deref");
@@ -36,7 +36,10 @@ impl<T> DerefMut for Selector<T> {
 
 fn main() {
     {
-        let mut s = Selector { elements: vec!['x', 'y', 'z'], current: 2 };
+        let mut s = Selector {
+            elements: vec!['x', 'y', 'z'],
+            current: 2,
+        };
 
         // Use * operator (deref).
         assert_eq!(*s, 'z');
@@ -51,7 +54,10 @@ fn main() {
     {
         // Rust applies deref coercions to resolve type conflicts, but not to
         // satisfy bounds on type viariables.
-        let s = Selector { elements: vec!["one", "two", "three"], current: 2 };
+        let s = Selector {
+            elements: vec!["one", "two", "three"],
+            current: 2,
+        };
 
         fn show_it(element: &str) {
             println!("show_it: {}", element);

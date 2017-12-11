@@ -1,4 +1,3 @@
-
 // AsRef and AsMut definition from the standard library:
 //trait AsRef<T: ?Sized> {
 //    fn as_ref(&self) -> &T;

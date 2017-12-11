@@ -17,9 +17,7 @@ fn main() {
 }
 
 // Without entries, hashmap is accessed 2/3 times (in the worst case).
-fn get_or_insert_entry1(hmap: &mut HashMap<i32, char>, k: i32, v: char) ->
-    Option<&char>
-{
+fn get_or_insert_entry1(hmap: &mut HashMap<i32, char>, k: i32, v: char) -> Option<&char> {
     // 1st access.
     if !hmap.contains_key(&k) {
         // 2nd access.
@@ -29,9 +27,7 @@ fn get_or_insert_entry1(hmap: &mut HashMap<i32, char>, k: i32, v: char) ->
     hmap.get(&k)
 }
 
-fn get_or_insert_entry2(hmap: &mut HashMap<i32, char>, k: i32, v: char) ->
-    Option<&char>
-{
+fn get_or_insert_entry2(hmap: &mut HashMap<i32, char>, k: i32, v: char) -> Option<&char> {
     // Just one access using entry.
     Some(hmap.entry(k).or_insert(v))
 }

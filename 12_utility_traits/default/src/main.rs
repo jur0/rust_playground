@@ -1,9 +1,7 @@
-
 // Default trait from standard librabry:
 //trait Default {
 //    fn default() -> Self;
 //}
-
 
 // Rust doesn't implement Default for structs. It can be added using
 // #[derive(Default)].

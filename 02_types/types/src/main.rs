@@ -1,4 +1,3 @@
-
 fn main() {
     // _ can be placed anywhere in a number literal.
     let decimal = 100_321;
@@ -10,16 +9,20 @@ fn main() {
     let binary = 0b1111000;
     // b'A'- byte value (u8) literal, ASCII code for A character
     let byte = b'A';
-    println!("decimal = {}, hex = {}, octal = {}, binary = {}, byte = {}",
-             decimal, hex, octal, binary, byte);
+    println!(
+        "decimal = {}, hex = {}, octal = {}, binary = {}, byte = {}",
+        decimal, hex, octal, binary, byte
+    );
 
     // If no type is specified, the default types (usually) are i32 or f64.
     let default_int = 50; // i32
     let default_float = 10.5498; // f64
     let uint64: u64 = 5000;
     let size: usize = 10000;
-    println!("default_int = {}, default_float = {}, uint64 = {}, size = {}",
-             default_int, default_float, uint64, size);
+    println!(
+        "default_int = {}, default_float = {}, uint64 = {}, size = {}",
+        default_int, default_float, uint64, size
+    );
 
     // Literals' type can be determined using 'uX', 'iX' at the end of the
     // literal.
@@ -104,12 +107,15 @@ fn main() {
     let array = [1, 2, 3, 4, 5];
     // Reference to slice
     #[derive(Debug)]
-    let slice_array1= &array[1..4];
-    let slice_array2= &array[..2];
-    println!("slice_array1 = {:?}, slice_array2 = {:?}", slice_array1, slice_array2);
+    let slice_array1 = &array[1..4];
+    let slice_array2 = &array[..2];
+    println!(
+        "slice_array1 = {:?}, slice_array2 = {:?}",
+        slice_array1, slice_array2
+    );
 
     // Dynamically sized array - vector
     #[derive(Debug)]
-    let v:Vec<f64> = vec![0.1, 0.34, 1.904, 0.432];
+    let v: Vec<f64> = vec![0.1, 0.34, 1.904, 0.432];
     println!("v = {:?}", v);
 }

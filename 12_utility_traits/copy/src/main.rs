@@ -1,9 +1,8 @@
-
 // Copy is shallow byte to byte copy.
 
 #[derive(Debug, Copy)]
 struct A {
-    x: i32
+    x: i32,
 }
 
 //#[derive(Debug, Copy)]

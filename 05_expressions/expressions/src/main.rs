@@ -1,4 +1,3 @@
-
 fn main() {
     {
         // This is declaration, not expression. The let declaration doesn't
@@ -15,8 +14,10 @@ fn main() {
 
     {
         // Blocks are expressions.
-        let a = { 10 };  // Returns 10.
-        let b = { 10; }; // Returns () - due to semicolon.
+        let a = { 10 }; // Returns 10.
+        let b = {
+            10;
+        }; // Returns () - due to semicolon.
 
         assert_eq!(a, 10);
         assert_eq!(b, ());
@@ -54,7 +55,6 @@ fn main() {
                 println!("{}", i);
                 break;
             }
-
         }
     }
 

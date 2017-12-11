@@ -11,7 +11,8 @@ use std::fmt::Display;
 //}
 
 fn foo<T>(t: T)
-    where T: Borrow<i32> + Display
+where
+    T: Borrow<i32> + Display,
 {
     println!("t is borrowed: {}", t);
 }

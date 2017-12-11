@@ -14,7 +14,7 @@ struct Error2 {
 
 #[derive(Debug)]
 struct Code {
-    x: u32
+    x: u32,
 }
 
 // fmt function is called for {} in print/write functions.
@@ -71,7 +71,9 @@ fn get_error2() -> Result<(), Error2> {
 }
 
 fn get_error1() -> Result<(), Error1> {
-    Err(Error1 { code: Code { x: 1} })
+    Err(Error1 {
+        code: Code { x: 1 },
+    })
 }
 
 fn print_error(mut err: &Error) {
@@ -88,7 +90,7 @@ fn main() {
             print_error(e);
             println!("-----");
             println!("Error: {}", e);
-        },
+        }
         Ok(_) => println!("ok"),
     }
 }

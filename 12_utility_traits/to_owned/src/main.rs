@@ -1,4 +1,3 @@
-
 // Definition from standard library:
 //
 //trait ToOwned {

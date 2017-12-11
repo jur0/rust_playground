@@ -1,4 +1,3 @@
-
 fn main() {
     // Example without associated types in a trait.
     {
@@ -19,22 +18,32 @@ fn main() {
                 (&self.0 == n1) && (&self.1 == n2)
             }
 
-            fn first(&self) -> i32 { self.0 }
+            fn first(&self) -> i32 {
+                self.0
+            }
 
-            fn last(&self) -> i32 { self.1 }
+            fn last(&self) -> i32 {
+                self.1
+            }
         }
 
         fn difference<C>(container: &C) -> i32
-            where C: Contains<i32, i32> {
-                container.last() - container.first()
-            }
+        where
+            C: Contains<i32, i32>,
+        {
+            container.last() - container.first()
+        }
 
         let n1 = 3;
         let n2 = 10;
         let container = Container(n1, n2);
 
-        println!("Does container contain {} and {}: {}",
-                 n1, n2, container.contains(&n1, &n2));
+        println!(
+            "Does container contain {} and {}: {}",
+            n1,
+            n2,
+            container.contains(&n1, &n2)
+        );
         println!("First number: {}", container.first());
         println!("Last number: {}", container.last());
 
@@ -43,7 +52,6 @@ fn main() {
 
     // The same as above, but with associated types in trait.
     {
-
         struct Container<T>(T, T);
 
         trait Contains {
@@ -65,9 +73,13 @@ fn main() {
                 (self.0 == *n1) && (self.1 == *n2)
             }
 
-            fn first(&self) -> Self::A { self.0 }
+            fn first(&self) -> Self::A {
+                self.0
+            }
 
-            fn last(&self) -> Self::B { self.1 }
+            fn last(&self) -> Self::B {
+                self.1
+            }
         }
 
         //use std::ops::Sub;
@@ -82,8 +94,12 @@ fn main() {
         let n2 = 10;
         let container = Container(n1, n2);
 
-        println!("Does container contain {} and {}: {}",
-                 n1, n2, container.contains(&n1, &n2));
+        println!(
+            "Does container contain {} and {}: {}",
+            n1,
+            n2,
+            container.contains(&n1, &n2)
+        );
         println!("First number: {}", container.first());
         println!("Last number: {}", container.last());
 

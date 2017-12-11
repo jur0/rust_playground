@@ -1,4 +1,3 @@
-
 fn main() {
     {
         // Empty vector using vec! mactro.
@@ -8,16 +7,20 @@ fn main() {
         // 10 zeroed-out bytes.
         let buffer = vec![0u8; 10];
 
-        println!("numbers = {:?}, words = {:?}, buffer = {:?}",
-            numbers, words, buffer);
+        println!(
+            "numbers = {:?}, words = {:?}, buffer = {:?}",
+            numbers, words, buffer
+        );
 
         let first_word = words[0];
         let buffer_slice = &buffer[2..5];
         // fn to_vec(&self) -> Vec<T> where T: Clone
         let buffer_slice_copy = buffer[1..3].to_vec();
 
-        println!("first_word = {}, buffer_slice = {:?}, buffer_slice_copy = {:?}",
-            first_word, buffer_slice, buffer_slice_copy);
+        println!(
+            "first_word = {}, buffer_slice = {:?}, buffer_slice_copy = {:?}",
+            first_word, buffer_slice, buffer_slice_copy
+        );
 
         if let Some(word) = words.first() {
             println!("firts word = {}", word);

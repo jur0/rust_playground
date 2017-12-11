@@ -1,4 +1,3 @@
-
 // LIFO queue
 #[derive(Debug)]
 pub struct Queue {
@@ -10,7 +9,10 @@ pub struct Queue {
 impl Queue {
     // Associated function (doesn't have self parameter).
     fn new() -> Queue {
-        Queue { older: Vec::new(), younger: Vec::new() }
+        Queue {
+            older: Vec::new(),
+            younger: Vec::new(),
+        }
     }
 
     // Push a char onto the back of a queue.

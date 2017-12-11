@@ -1,12 +1,11 @@
-
 use std::{thread, time};
 use std::sync::Arc;
 use std::sync::Mutex;
 
 #[derive(Debug)]
 struct SharedData {
-    count: usize,   // Number of updates for this struct.
-    ids: Vec<i32>,  // Thread stores its id on updating this struct.
+    count: usize,  // Number of updates for this struct.
+    ids: Vec<i32>, // Thread stores its id on updating this struct.
 }
 
 impl SharedData {
@@ -42,7 +41,7 @@ fn main() {
                 } else {
                     break;
                 }
-            // Mutex released at the end of block.
+                // Mutex released at the end of block.
             }
             // Let's give a chance to other threads to lock the mutex.
             thread::sleep(sleep_dur);
@@ -55,4 +54,3 @@ fn main() {
 
     println!("resutl = {:?}", *mutex.lock().unwrap());
 }
-

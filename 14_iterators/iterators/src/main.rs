@@ -1,4 +1,3 @@
-
 // Iterator trait from standard library:
 //trait Iterator {
 //    type Item;
@@ -38,11 +37,7 @@ fn main() {
     {
         println!("-----");
 
-        let mut v = vec![
-            "aaa".to_string(),
-            "bbb".to_string(),
-            "ccc".to_string()
-        ];
+        let mut v = vec!["aaa".to_string(), "bbb".to_string(), "ccc".to_string()];
 
         // (&v).into_iter()
         for x in &v {
@@ -84,7 +79,6 @@ fn main() {
         assert_eq!(iterator.next(), Some(&6));
         assert_eq!(iterator.next(), None);
     }
-
 
     {
         let text = " ponies \n giraffes\niguanas \nsquid".to_string();

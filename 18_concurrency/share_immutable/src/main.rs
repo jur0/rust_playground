@@ -15,8 +15,10 @@ fn main() {
 
         // Spin up another thread.
         children.push(thread::spawn(move || {
-            println!("this is thread number {} with shared data: {:?}",
-                i, &shared_data_for_child);
+            println!(
+                "this is thread number {} with shared data: {:?}",
+                i, &shared_data_for_child
+            );
             i
         }));
     }

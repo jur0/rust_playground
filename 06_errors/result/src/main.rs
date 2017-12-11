@@ -10,13 +10,13 @@ fn main() {
     // The same as above, but we specify what panic! message is.
     // let f = File::open("hello.txt").expect("Cannot open the file");
 
-   match f {
+    match f {
         Ok(file) => file,
         Err(ref e) if e.kind() == ErrorKind::NotFound => {
             panic!("File not found");
-        },
+        }
         Err(e) => {
             panic!("Error opening file: {:?}", e);
-        },
+        }
     };
 }

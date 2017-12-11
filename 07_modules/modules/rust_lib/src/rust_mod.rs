@@ -1,4 +1,3 @@
-
 #[derive(Debug)]
 pub struct A {
     x: i32,
@@ -6,7 +5,6 @@ pub struct A {
 }
 
 impl A {
-
     pub fn new() -> Self {
         Self { x: 0, y: 0 }
     }

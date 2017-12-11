@@ -1,4 +1,3 @@
-
 fn main() {
     {
         let x = 10;
@@ -14,7 +13,10 @@ fn main() {
 
     {
         #[derive(Debug)]
-        struct Point { x: i32, y: i32 }
+        struct Point {
+            x: i32,
+            y: i32,
+        }
         let point = Point { x: 10, y: 20 };
 
         let r: &Point = &point;

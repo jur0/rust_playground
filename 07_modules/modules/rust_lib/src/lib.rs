@@ -1,4 +1,3 @@
-
 pub mod rust_mod;
 
 #[cfg(test)]

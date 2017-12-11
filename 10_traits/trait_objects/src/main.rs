@@ -41,7 +41,10 @@ impl T1 for A {
 
 impl T1 for B {
     fn description(&self) -> String {
-        format!("struct A {{ x = {}, y = {}, z = {} }}", self.x, self.y, self.z)
+        format!(
+            "struct A {{ x = {}, y = {}, z = {} }}",
+            self.x, self.y, self.z
+        )
     }
 
     fn double(&mut self) {
@@ -88,7 +91,11 @@ fn main() {
 
         // Box can become a fat pointer - trait object.
         // Box<B> is converted to Box<T1>
-        let t2: Box<T1> = Box::new(B { x: 100, y: 200, z: 300 });
+        let t2: Box<T1> = Box::new(B {
+            x: 100,
+            y: 200,
+            z: 300,
+        });
         // TODO: Box pointing to a mutable memory?
         //t2.double();
         println!("{}", t2.description());

@@ -2,6 +2,6 @@
 name = "buddy_traits"
 version = "0.1.0"
 authors = ["Juraj Hlista <jurajhlista@gmail.com>"]
-
+    // TODO
 [dependencies]
 rand = "0.3"

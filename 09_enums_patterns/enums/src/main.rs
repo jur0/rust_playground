@@ -1,4 +1,3 @@
-
 #[derive(Debug)]
 enum IpAddrKind {
     V4,
@@ -27,7 +26,6 @@ impl IpAddr2 {
         IpAddr2::V6(addr)
     }
 }
-
 
 fn main() {
     {

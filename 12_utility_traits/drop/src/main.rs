@@ -17,14 +17,18 @@ impl Drop for A {
 }
 
 fn main() {
-    let mut a =
-        A { x: "aaa".to_string(),
-            y: vec!["X".to_string(), "Y".to_string(), "Z".to_string()] };
+    let mut a = A {
+        x: "aaa".to_string(),
+        y: vec!["X".to_string(), "Y".to_string(), "Z".to_string()],
+    };
 
     println!("before assignment");
 
     // a is dropped after the assignment.
-    a = A { x: "bbb".to_string(), y: vec![] };
+    a = A {
+        x: "bbb".to_string(),
+        y: vec![],
+    };
 
     println!("end of block");
     // a is droppped again, after the block end.

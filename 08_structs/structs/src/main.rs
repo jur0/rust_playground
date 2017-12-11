@@ -1,4 +1,3 @@
-
 // Named-field structs.
 #[derive(Debug)]
 struct A {
@@ -15,7 +14,7 @@ struct B(i32, i32);
 struct C;
 
 fn main() {
-    let a = A { x: 1, y: 2};
+    let a = A { x: 1, y: 2 };
     let b = B(1, 2);
     let c = C;
 

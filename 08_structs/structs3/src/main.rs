@@ -1,4 +1,3 @@
-
 // LIFO queue
 #[derive(Debug)]
 pub struct Queue<T> {
@@ -8,7 +7,10 @@ pub struct Queue<T> {
 
 impl<T> Queue<T> {
     fn new() -> Self {
-        Queue { older: Vec::new(), younger: Vec::new() }
+        Queue {
+            older: Vec::new(),
+            younger: Vec::new(),
+        }
     }
 
     fn push(&mut self, t: T) {

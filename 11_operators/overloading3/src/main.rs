@@ -5,7 +5,7 @@ struct Complex<T> {
     // Real portion of the complex number.
     r: T,
     // Imaginary portion of the complex number.
-    i: T
+    i: T,
 }
 
 // This is the trait from std::ops::Add.
@@ -16,14 +16,17 @@ struct Complex<T> {
 //}
 
 fn main() {
-
     impl<L, R, O> Add<Complex<R>> for Complex<L>
-        where L: Add<R, Output=O>
+    where
+        L: Add<R, Output = O>,
     {
-        type Output=Complex<O>;
+        type Output = Complex<O>;
 
         fn add(self, rhs: Complex<R>) -> Self::Output {
-            Complex { r: self.r + rhs.r, i: self.i + rhs.i }
+            Complex {
+                r: self.r + rhs.r,
+                i: self.i + rhs.i,
+            }
         }
     }
 

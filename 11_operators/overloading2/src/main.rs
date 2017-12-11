@@ -1,11 +1,11 @@
-use std::ops::{Add, Neg, AddAssign};
+use std::ops::{Add, AddAssign, Neg};
 
 #[derive(Clone, Copy, Debug)]
 struct Complex<T> {
     // Real portion of the complex number.
     r: T,
     // Imaginary portion of the complex number.
-    i: T
+    i: T,
 }
 
 // This is the trait from std::ops::Add.
@@ -19,28 +19,42 @@ struct Complex<T> {
 // get another T as the output. Since Add is part of the standard
 // library, it is already implemented for all of the primitive
 // integer and floating point types.
-impl<T> Add for Complex<T> where T: Add<Output=T> {
-    type Output=Self;
+impl<T> Add for Complex<T>
+where
+    T: Add<Output = T>,
+{
+    type Output = Self;
 
     fn add(self, rhs: Self) -> Self {
-        Complex { r: self.r + rhs.r, i: self.i + rhs.i }
+        Complex {
+            r: self.r + rhs.r,
+            i: self.i + rhs.i,
+        }
     }
 }
 
 // T needs to implement the Neg trait, and if we neg a T, we get another
 // T as the output.
-impl<T> Neg for Complex<T> where T: Neg<Output=T> {
-    type Output=Self;
+impl<T> Neg for Complex<T>
+where
+    T: Neg<Output = T>,
+{
+    type Output = Self;
 
     fn neg(self) -> Self {
-        Complex { r: -self.r, i: -self.i }
+        Complex {
+            r: -self.r,
+            i: -self.i,
+        }
     }
 }
 
 // T need to implement the AddAssign trait, and if we += a T, we get
 // another T which also implements the same trait.
-impl<T> AddAssign for Complex<T> where T: AddAssign<T> {
-
+impl<T> AddAssign for Complex<T>
+where
+    T: AddAssign<T>,
+{
     fn add_assign(&mut self, rhs: Self) {
         self.r += rhs.r;
         self.i += rhs.i;
@@ -54,7 +68,6 @@ impl<T: PartialEq> PartialEq for Complex<T> {
         self.r == other.r && self.i == other.i
     }
 }
-
 
 fn main() {
     let c1 = Complex { r: 1.5, i: 2.5 };

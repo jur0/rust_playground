@@ -1,4 +1,3 @@
-
 fn main() {
     // Macro panic! is used for crashing explicitly.
     //panic!("Something bad happened");

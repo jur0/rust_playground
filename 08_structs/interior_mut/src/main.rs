@@ -1,4 +1,3 @@
-
 use std::cell::Cell;
 use std::cell::RefCell;
 
@@ -16,7 +15,10 @@ struct B {
 
 impl A {
     fn new(a: i32, b: i32) -> Self {
-        Self { a: Cell::new(a), b: b }
+        Self {
+            a: Cell::new(a),
+            b: b,
+        }
     }
 
     // Setting value of the Cell via immutable reference.
@@ -27,7 +29,10 @@ impl A {
 
 impl B {
     fn new(a: Vec<i32>, b: i32) -> Self {
-        Self { a: RefCell::new(a), b: b }
+        Self {
+            a: RefCell::new(a),
+            b: b,
+        }
     }
 
     // Setting value of the RefCell via immutable reference.

@@ -1,4 +1,3 @@
-
 struct I32Range {
     start: i32, // the next value
     end: i32,   // limit

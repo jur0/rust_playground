@@ -1,4 +1,3 @@
-
 fn main() {
     {
         let y = 'y';
@@ -89,9 +88,10 @@ fn main() {
         match Some(&y) {
             // This won't work!
             //Some(&yy) => println!("(clone) [&y -> &yy] yy = {:?}", yy),
-
-            Some(ref yy) => println!("(clone) [&y -> ref yy] **yy = {:?}, *yy = {:?}, yy = {:?}",
-                                     **yy, *yy, yy),
+            Some(ref yy) => println!(
+                "(clone) [&y -> ref yy] **yy = {:?}, *yy = {:?}, yy = {:?}",
+                **yy, *yy, yy
+            ),
             None => println!("nothing"),
         }
     }

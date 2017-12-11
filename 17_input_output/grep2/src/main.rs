@@ -3,7 +3,8 @@ use std::io::prelude::*;
 use std::fs::File;
 
 fn grep<R>(target: &str, reader: R) -> io::Result<()>
-    where R: BufRead
+where
+    R: BufRead,
 {
     for line_result in reader.lines() {
         let line = line_result?;

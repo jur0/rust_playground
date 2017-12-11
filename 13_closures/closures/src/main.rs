@@ -39,15 +39,32 @@ fn sort_cities_thread(mut cities: Vec<City>, stat: StatKind) -> Vec<City> {
     thread::spawn(move || {
         cities.sort_by_key(key_fn);
         cities
-    }).join().unwrap()
+    }).join()
+        .unwrap()
 }
 
 fn main() {
     let mut v = vec![
-        City { name: String::from("Prague"), population: 1_200_000, cost: 1500 },
-        City { name: String::from("London"), population: 10_000_000, cost: 2500 },
-        City { name: String::from("Las Palmas"), population: 700_000, cost: 1300 },
-        City { name: String::from("Piestany"), population: 30_000, cost: 800 }
+        City {
+            name: String::from("Prague"),
+            population: 1_200_000,
+            cost: 1500,
+        },
+        City {
+            name: String::from("London"),
+            population: 10_000_000,
+            cost: 2500,
+        },
+        City {
+            name: String::from("Las Palmas"),
+            population: 700_000,
+            cost: 1300,
+        },
+        City {
+            name: String::from("Piestany"),
+            population: 30_000,
+            cost: 800,
+        },
     ];
     println!("v = {:?}", v);
 

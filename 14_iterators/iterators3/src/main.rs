@@ -1,4 +1,3 @@
-
 enum BinaryTree<T> {
     Empty,
     NonEmpty(Box<TreeNode<T>>),
@@ -18,7 +17,7 @@ struct TreeIter<'a, T: 'a> {
     // vector. The node the iterator will visit next is at the top of the
     // stack, with those ancestors still unvisited below it. If the stack is
     // empty, the iteration is over.
-    unvisited: Vec<&'a TreeNode<T>>
+    unvisited: Vec<&'a TreeNode<T>>,
 }
 
 impl<'a, T: 'a> TreeIter<'a, T> {
@@ -34,7 +33,9 @@ impl<'a, T: 'a> TreeIter<'a, T> {
 impl<T> BinaryTree<T> {
     // Initial stack has the leftmost nodes on the top of the stack.
     fn iter(&self) -> TreeIter<T> {
-        let mut iter = TreeIter { unvisited: Vec::new() };
+        let mut iter = TreeIter {
+            unvisited: Vec::new(),
+        };
         iter.push_left_edge(self);
         iter
     }
@@ -70,10 +71,12 @@ impl<'a, T> Iterator for TreeIter<'a, T> {
     }
 }
 
-fn make_node<T>(left: BinaryTree<T>, element: T, right: BinaryTree<T>)
-    -> BinaryTree<T>
-{
-    BinaryTree::NonEmpty(Box::new(TreeNode { left, element, right }))
+fn make_node<T>(left: BinaryTree<T>, element: T, right: BinaryTree<T>) -> BinaryTree<T> {
+    BinaryTree::NonEmpty(Box::new(TreeNode {
+        left,
+        element,
+        right,
+    }))
 }
 
 fn main() {
@@ -89,8 +92,10 @@ fn main() {
 
     assert_eq!(v, ["mecha", "Jaeger", "droid", "robot"]);
 
-    assert_eq!(tree.iter()
-               .map(|name| format!("mega-{}", name))
-               .collect::<Vec<_>>(),
-               vec!["mega-mecha", "mega-Jaeger", "mega-droid", "mega-robot"]);
+    assert_eq!(
+        tree.iter()
+            .map(|name| format!("mega-{}", name))
+            .collect::<Vec<_>>(),
+        vec!["mega-mecha", "mega-Jaeger", "mega-droid", "mega-robot"]
+    );
 }

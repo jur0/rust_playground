@@ -1,4 +1,3 @@
-
 fn main() {
     // Integers are simple values and are pushed onto stack, this will work.
     // It's copying on the stack.
@@ -34,7 +33,10 @@ fn main() {
         x: String,
         y: u32,
     };
-    let s = S { x: "test string".to_string(), y: 100 };
+    let s = S {
+        x: "test string".to_string(),
+        y: 100,
+    };
     let xx = s.x;
     let yy = s.y;
     println!("xx = {}", xx);
@@ -51,7 +53,6 @@ fn main() {
     }
     // this won't work as v was moved
     //println!("v = {:?}", v);
-
 
     {
         let s = String::from("hello");
@@ -76,7 +77,6 @@ fn main() {
         println!("s1 = {}, s3 = {}", s1, s3);
     } // Here, s3 goes out of scope and is dropped. s2 goes out of scope but
       // was moved, so nothing happens. s1 goes out of scope and is dropped.
-
 }
 
 fn take_ownership(s: String) {

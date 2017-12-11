@@ -1,4 +1,3 @@
-
 // Definition in standard library:
 //enum Cow<'a, B: ?Sized + 'a>
 //    where B: ToOwned
