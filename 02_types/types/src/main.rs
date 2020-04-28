@@ -89,7 +89,7 @@ fn main() {
     println!("ra = {}, *ra = {}", ra, *ra);
 
     let mut b = 2_000u64;
-    let mut rb = &mut b;
+    let rb = &mut b;
     *rb = *rb + 1;
     println!("rb = {}, *rb = {}", rb, *rb);
 
