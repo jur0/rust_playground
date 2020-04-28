@@ -18,10 +18,11 @@ fn main() {
     let default_int = 50; // i32
     let default_float = 10.5498; // f64
     let uint64: u64 = 5000;
+    let uint128: u128 = 111000;
     let size: usize = 10000;
     println!(
-        "default_int = {}, default_float = {}, uint64 = {}, size = {}",
-        default_int, default_float, uint64, size
+        "default_int = {}, default_float = {}, uint64 = {}, uint128 = {}, size = {}",
+        default_int, default_float, uint64, uint128, size
     );
 
     // Literals' type can be determined using 'uX', 'iX' at the end of the
