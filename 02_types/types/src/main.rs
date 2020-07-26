@@ -51,6 +51,10 @@ fn main() {
     let i32_max_inc = i32_max.wrapping_add(1);
     println!("i32_max_inc = {}", i32_max_inc);
 
+    let u32_max = std::u32::MAX;
+    let u32_max_inc = u32_max.wrapping_add(1);
+    println!("u32_max_inc = {}", u32_max_inc);
+
     #[derive(Debug)]
     struct S1 {
         x: i32,
