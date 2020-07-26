@@ -40,8 +40,6 @@ fn main() {
     let heart_eyed_cat = '😻';
     println!("z = {}, cat = {}", z, heart_eyed_cat);
 
-    // #[derive(Debug)] - to be able to use {:?} in println!.
-    #[derive(Debug)]
     let unit = ();
     println!("unit = {:?}", unit);
 
@@ -80,7 +78,6 @@ fn main() {
     let e2 = E::Y(100);
     println!("e1 = {:?}, e2 = {:?}", e1, e2);
 
-    #[derive(Debug)]
     let b = Box::<(i32, u32)>::new((1, 2));
     println!("b = {:?}", b);
 
@@ -107,7 +104,6 @@ fn main() {
     // Fixed-length array
     let array = [1, 2, 3, 4, 5];
     // Reference to slice
-    #[derive(Debug)]
     let slice_array1 = &array[1..4];
     let slice_array2 = &array[..2];
     println!(
@@ -116,7 +112,6 @@ fn main() {
     );
 
     // Dynamically sized array - vector
-    #[derive(Debug)]
     let v: Vec<f64> = vec![0.1, 0.34, 1.904, 0.432];
     println!("v = {:?}", v);
 }
